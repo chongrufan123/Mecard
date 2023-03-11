@@ -3,8 +3,6 @@ import random
 from typing import List
 import datetime  # 添加
 
-import fire
-
 class Card:
     def __init__(self):
         self.categories_dict = {
@@ -34,7 +32,7 @@ class Card:
         while True:
             title = input('请输入题目标题：')
             content = []
-            print('请输入题目内容（以一个单独的句号为结束）：')
+            print('请输入题目内容（以一个空白回车作为结束）：')
             while True:
                 line = input()
                 if line.strip() == '':
@@ -126,8 +124,3 @@ class Card:
         with open('stat.md', 'a') as f:
             # f.write(f'{accuracy:.2f}%,{total_count},{correct_count},{incorrect_count},{datetime.datetime.now()}\n')
             f.write(f'|{datetime.datetime.now().strftime("%Y-%m-%d")}|{accuracy:.2f}%|{total_count}|{correct_count}|{incorrect_count}|\n')
-
-if __name__ == '__main__':
-    fire.Fire(Card)
-
-# 在这个程序中增加添加题库的功能，命令为"add"，当执行add操作后，询问添加题库的类别，并将所有类别显示在下面，用户可以输入1~9的数字，选择类别，然后是title和content

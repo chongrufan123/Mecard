@@ -5,6 +5,8 @@ Mecard是一个用python写成的简单的命令行工具，使用了fire框架�
 ```
 # start memory
 python main.py start
+# add question bank
+python main.py add
 ```
 
 ## More Important
