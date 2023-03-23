@@ -2,6 +2,12 @@
 Mecard是一个用python写成的简单的命令行工具，使用了fire框架，可以实现类似记忆卡片(memory card)的功能。抽查你对与题库中题目的理解或记忆程度。
 
 ## Getting Started
+首先下载依赖的库
+```
+pip install -r requirements.txt
+```
+
+之后便可以跑程序了
 ```
 # 开始记忆
 python main.py start
