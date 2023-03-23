@@ -1,5 +1,6 @@
 import json
 import random
+import os
 from typing import List
 import datetime  # 添加
 
@@ -10,12 +11,10 @@ class Card:
             1: '密码学',
             2: '网络安全',
             3: '数据库',
-            4: '体系结构与组成原理',
-            5: '软件工程',
+            4: '组成原理',
             6: '操作系统',
             7: '计算机网络',
             8: '数据结构',
-            9: '编程语言',
         }
         # 初始化题目列表为空
         self.questions = []
@@ -68,7 +67,7 @@ class Card:
                 category = juage
             print("---------------")
         # 将题目列表保存到json文件中
-        with open('card.json', 'w') as f:
+        with open(os.path.join('card_bank', 'card.json'), 'w') as f:
             json.dump(self.questions, f, ensure_ascii=False, indent=4)
         
 
@@ -79,7 +78,7 @@ class Card:
         self.memory(category, mode)     # 开始记忆
 
     def load_questions(self) -> List[dict]:
-        with open('card.json', 'r') as f:  # 打开文件 card.json 用于读取
+        with open(os.path.join('card_bank', 'card.json'), 'r') as f:  # 打开文件 card.json 用于读取
             return json.load(f)  # 使用 json.load() 方法从文件中读取数据并返回一个列表
 
     # 定义一个方法用于选择题目类别
